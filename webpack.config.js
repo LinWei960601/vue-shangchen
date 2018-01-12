@@ -10,7 +10,7 @@ module.exports = {
     // 输出
     output: {
         path: path.resolve(__dirname, './dist'),
-        filename: 'bundle_[chunkhash:8].js'
+        filename: 'bundle.js'
     },
 
     //  插件配置
@@ -20,7 +20,7 @@ module.exports = {
         new htmlWebapckPlugin({
             template: './src/index.html',        // 要处理的html
             filename: 'index.html',                 // 处理后的html名称
-            inject: 'body',                               // 自动注入js到什么地方
+            inject: 'hello vue',                               // 自动注入js到什么地方
         }),
     ],
 
