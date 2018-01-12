@@ -1,6 +1,8 @@
 <template>
   <div>
-    <h1>{{ title }}</h1>
+    公共头部
+    <router-view></router-view>
+    公共底部
   </div>
 </template>
 

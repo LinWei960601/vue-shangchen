@@ -18,9 +18,9 @@ module.exports = {
 
         // 自动注入打包好的js文件到body里
         new htmlWebapckPlugin({
-            template: './src/index.html',        // 要处理的html
-            filename: 'index.html',                 // 处理后的html名称
-            inject: 'hello vue',                               // 自动注入js到什么地方
+            template: './src/index.html', // 要处理的html
+            filename: 'index.html', // 处理后的html名称
+            inject: 'hello vue', // 自动注入js到什么地方
         }),
     ],
 
@@ -47,7 +47,12 @@ module.exports = {
                 test: /\.(png|jpg|gif|jpeg|svg)$/,
                 use: [
                     // 指定小于10kb的图片才转为base64编码打包
-                    {loader: 'url-loader', options: {limit: 10240}}
+                    {
+                        loader: 'url-loader',
+                        options: {
+                            limit: 10240
+                        }
+                    }
                 ]
             },
 
@@ -55,7 +60,7 @@ module.exports = {
             {
                 test: /\.js$/,
                 use: ['babel-loader'],
-                exclude: /node_modules/  // 如果项目引入了node-modules的东西,不转换它们
+                exclude: /node_modules/ // 如果项目引入了node-modules的东西,不转换它们
             },
 
             // 解析vue文件
